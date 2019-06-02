@@ -1,0 +1,22 @@
+<div class="card bg-warning" (click)="selectTab('status')">
+    <div class="card-body text-center">
+      <h4 class="card-title">Status</h4>
+      <div class="row">
+          <div class="col-md-12">
+            <span>Humidity </span>
+          </div>
+          <div >
+            <table class="col-md-12">
+              <th class ="col-md-6">Temparature</th>
+              <th class ="col-md-6">Sensor 1</th>
+              <tbody>
+                <tr *ngFor="let humidity of humidityList">
+                  <td>{{humidity.time}}</td>
+                  <td>{{humidity.value}}</td>
+                </tr>
+              </tbody>
+              </table>
+          </div>
+        </div>
+    </div>
+  </div>

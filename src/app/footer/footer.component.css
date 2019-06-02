@@ -1,0 +1,13 @@
+  
+  #page-content {
+    flex: 1 0 auto;
+  }
+  
+  #sticky-footer {
+    flex-shrink: none;
+    height: 50px;
+    margin-top: -50px;
+  }
+  
+  /* Other Classes for Page Styling */
+  

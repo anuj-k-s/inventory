@@ -1,0 +1,18 @@
+<div class="card bg-success" (click)="selectTab('location')">
+    <div class="card-body text-center">
+      <h4 class="card-title">Location</h4>
+      <div class="row">
+          <table>
+            <tr *ngFor="let data of locationList; let i = index">
+              <td>
+                <span>{{i+1}} . </span>
+                <span>The vehicle has crossed </span>
+                <span>{{data.place}}</span>
+                <span> at the time </span>
+                <span>{{data.time}}</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+  </div>

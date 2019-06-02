@@ -1,0 +1,31 @@
+
+
+<label>Server Name :</label>
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<button class="btn btn-primary" [disabled]=!getEnabledStatus() (click)="onClickServer()">
+   As button</button>
+<!--<p>{{serverCreation}}</p>
+-->
+<p *ngIf="serverCreated">Server was created with name {{serverName}} </p>
+<input type="text" class="form-control" (input)="onInput($event)">
+<p>{{serverName}}</p>
+
+
+
+<input type ="text" class="form-control" [(ngModel)]= "userName">
+<p>{{userName}}</p>
+<button class="btn btn-primary" [disabled]= "isEmpty()"  (click)="onClickReset()" >Reset</button>
+
+<app-server  *ngFor = "let server of servers"></app-server>
+
+<div class="container">
+  <div class= "row">
+      <div class="col-xs-12">
+<label>Details</label>
+<button class="btn btn-primary" (click) = "onRevese()">Display Details</button>
+<p *ngIf = "toggleValue">The password</p>
+<p [ngStyle]="{backgroundColor : returnColor() }"
+[ngClass]="{ backgroundColor : returnC()}">{{clickCount}}</p>
+</div>
+</div>
+</div>

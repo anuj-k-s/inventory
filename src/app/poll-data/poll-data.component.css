@@ -1,0 +1,18 @@
+.dropdown{
+    margin-bottom: 20PX
+}
+.drop-down{
+    margin-bottom: 20PX;
+    text-align: center
+}
+.card-body {
+    padding: 0.25rem;
+   
+}
+.card-group{
+    cursor: pointer;
+    margin-bottom: 20PX;
+}
+.center-css{
+    text-align: center
+}

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class=" drop-down col-sm-12 center-css">Please Select Your Vehicle number:
+    <select [(ngModel)]="model">
+      <option [ngValue]=null>Vehicle number</option>
+      <option *ngFor="let item of list" [ngValue]="item">{{item.name}}</option>
+    </select>
+  </div>
+</div>
+
+<div *ngIf="model" class="card-group">
+  <a class="card bg-primary" (click)="selectTab('information')">
+    <div class="card-body text-center">
+      <h4 class="card-title">Information</h4>
+    </div>
+  </a>
+  <a class="card bg-success" (click)="selectTab('location')">
+    <div class="card-body text-center">
+      <h4 class="card-title">Location</h4>
+    </div>
+  </a>
+  <a class="card bg-warning" (click)="selectTab('status')">
+    <div class="card-body text-center">
+      <h4 class="card-title">Status</h4>
+    </div>
+  </a>
+</div>
+<div class="center-css">
+<app-information *ngIf="isInformationTab"></app-information>
+<app-vehicle-location *ngIf="isLocationTab"></app-vehicle-location>
+<app-vehicle-status  *ngIf="isStatusTab"></app-vehicle-status>
+</div>

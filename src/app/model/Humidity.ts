@@ -1,5 +1,4 @@
 export class Humidity {
-    constructor(public time:string, public value:string){
-        
+    constructor(public time: Date, public value: string) {
     }
 }

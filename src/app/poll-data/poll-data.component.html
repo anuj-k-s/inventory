@@ -3,31 +3,33 @@
   <div class=" drop-down col-sm-12 center-css">Please Select Your Vehicle number:
     <select [(ngModel)]="model">
       <option [ngValue]=null>Vehicle number</option>
-      <option *ngFor="let item of list" [ngValue]="item">{{item.name}}</option>
+      <option *ngFor="let item of vehicleNumbers" [ngValue]="item">{{item.vehicleNumber}}</option>
     </select>
   </div>
 </div>
 
-<div *ngIf="model" class="card-group">
-  <a class="card bg-primary" (click)="selectTab('information')">
+
+<div *ngIf="model" class="col-sm-12 " >
+  <div class ="nav nav-tabs">
+  <a class=" col-md-4 active" (click)="selectTab('information')">
     <div class="card-body text-center">
       <h4 class="card-title">Information</h4>
     </div>
   </a>
-  <a class="card bg-success" (click)="selectTab('location')">
+  <a class=" col-md-4" (click)="selectTab('location')">
     <div class="card-body text-center">
       <h4 class="card-title">Location</h4>
     </div>
   </a>
-  <a class="card bg-warning" (click)="selectTab('status')">
+  <a class=" col-md-4" (click)="selectTab('status')">
     <div class="card-body text-center">
       <h4 class="card-title">Status</h4>
     </div>
   </a>
 </div>
-<div class="center-css">
-<app-information *ngIf="isInformationTab"></app-information>
-<app-vehicle-location *ngIf="isLocationTab"></app-vehicle-location>
-<app-vehicle-status  *ngIf="isStatusTab"></app-vehicle-status>
-</div>
+  <div class="col-md-12">
+    <app-information *ngIf = "isInformationTab"></app-information>
+    <app-vehicle-location  [data]="response" *ngIf = "isLocationTab"></app-vehicle-location>
+    <app-vehicle-status  [sensorsData]="response" *ngIf = "isStatusTab"></app-vehicle-status>
+    </div>
 </div>
